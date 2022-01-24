@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import '../node_modules/normalize.css/normalize.css'
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ControlGastos } from './ControlGastos';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ControlGastos />
   </React.StrictMode>,
   document.getElementById('root')
 );
