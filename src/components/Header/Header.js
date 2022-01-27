@@ -10,7 +10,8 @@ export const Header = (props) => {
     setForm,
     resetForm,
     isValidExpenses,
-    setIsValidExpenses
+    setIsValidExpenses,
+    arrExpenses
   } = props
 
   return (
@@ -20,6 +21,7 @@ export const Header = (props) => {
             (isValidExpenses) ? 
                   <ControlExpenses 
                     valueExpenses={valueExpenses}
+                    arrExpenses={arrExpenses}
                  />
             :
                   <NewExpenses 
