@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { formatCurrency } from '../../../helpers';
 
-export const ControlExpenses = ({ valueExpenses }) => {
+export const ControlExpenses = ({ valueExpenses, arrExpenses }) => {
+
+    const [amountAvailable, setAmountAvailable] = useState(0);
+    const [amountSpent, setAmountSpent] = useState(0);
     
-    // formatCurrency recibe el valor de nuestro state
-    // formateado a tipo number para retornarlo 
-    // en un formato adecuado a la moneda local
-    
-    const formatCurrency = (mount) => mount.toLocaleString('es-AR', { style: 'currency', currency: 'ARG',});
-    
+    useEffect(() => {
+        const totalSpent = arrExpenses.reduce((total, expense) => expense.mount + total, 0);
+        const totalAvailable = Number(valueExpenses) - totalSpent;
+        
+        setAmountAvailable(totalAvailable);
+        setAmountSpent(totalSpent);
+
+    }, [arrExpenses])
     return (
         <section className='contenedor-presupuesto contenedor sombra dos-columnas'>
             <article>
@@ -19,10 +25,10 @@ export const ControlExpenses = ({ valueExpenses }) => {
                     <span>Presupuesto:</span> {formatCurrency(Number(valueExpenses))}
                 </p>
                 <p>
-                    <span>Disponible:</span> {formatCurrency(0)}
+                    <span>Disponible:</span> {formatCurrency(Number(amountAvailable))}
                 </p>
                 <p>
-                    <span>Gastado:</span> {formatCurrency(0)}
+                    <span>Gastado:</span> {formatCurrency(amountSpent)}
                 </p>
             </article>
         </section>
