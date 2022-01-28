@@ -3,6 +3,9 @@
 Este proyecto realiza la funcionalidad de una billetera virtual
 que tiene el control de nuestros gastos, indicando cada gasto realizado, se pueden editar, eliminar hasta filtrar gastos por categoria. Manejamos el localStorage para tener un mejor control de nuestros gastos. 
 
+https://user-images.githubusercontent.com/80013958/151477314-ab65669c-a9ca-48f1-94c9-a3c9dd78efcf.mp4
+
+
 # Construido con 🛠️
 * React.js
 * Normalize Css
@@ -41,7 +44,7 @@ Cuando tengamos muchos gastos y querramos buscar uno o varios de una misma categ
 ## Resposive
 Esta aplicacion esta diseñada para que se pueda usar desde cualquier dispositivo. 
 # Deploy 👨‍💻
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/939a9c60-fcd0-4db5-88df-5928519016c1/deploy-status)](https://controexpenses.netlify.app/)
 # Contacto 📫
 - [Linkedin](https://www.linkedin.com/in/leanquiroga95/)
 - [Email](mailto:leandroquiroga9514@gmail.com)
