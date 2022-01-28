@@ -1,32 +1,46 @@
 import React from 'react';
-import { NoPayments } from './NoPayments';
-import { Gasto } from './Gasto';
-import iconPayments from './../../../img/icon_payments.svg';
+import { GastosCreados } from './GastosCreados';
+import { GastosFiltrados } from './GastosFiltrados';
+import iconPayments from '../../../img/icon_payments.svg'
+
 
 export const ListadoGastos = (props) => {
 
-    const { arrExpenses, setExpenseEdit, deleteExpenses } = props
-    return (
-        <section className='listado-gastos contenedor'>
-            {
-                // Chequea que el arrglo de gastos no este vacio
-                (arrExpenses.length === 0) ? 
-                        <NoPayments
-                            title='No se han registrados gastos'
-                            srcImage={iconPayments}
-                        />
-                    :   
-                        // Crea un nuevo arreglo con cada objeto de gastos para
-                        // pintarlo en el html
-                        arrExpenses.map(expense => (
-                            <Gasto
-                                key={expense.id}
-                                expense={expense}
-                                setExpenseEdit={setExpenseEdit}
-                                deleteExpenses={deleteExpenses}
-                            />
-                        ))
-            } 
-        </section>
-    );
+  const {
+    arrExpenses,
+    setExpenseEdit,
+    deleteExpenses,
+    filterExpenses,
+    filterCategory,
+  } = props;
+
+  return (  
+    <section className='listado-gastos contenedor'>
+
+      {filterCategory ?
+        (
+          <GastosFiltrados
+            filterExpenses={filterExpenses}
+            srcImage={iconPayments}
+            titleNoFiltrados='No se han registrados gastos !'
+            titleFiltrados='Gastos'
+            setExpenseEdit={setExpenseEdit}
+            deleteExpenses={deleteExpenses}
+            filterCategory={filterCategory}
+          />
+        )
+      :
+        (
+          <GastosCreados
+            arrExpenses={arrExpenses}
+            srcImage={iconPayments}
+            titleGastos='No se han registrados gastos !!'
+            deleteExpenses={deleteExpenses}
+            setExpenseEdit={setExpenseEdit}
+          />
+        )
+      }
+
+    </section>
+  )
 };
