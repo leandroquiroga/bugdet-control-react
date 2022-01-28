@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Control de gasto (React + Normalize CSS + localStorage)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto realiza la funcionalidad de una billetera virtual
+que tiene el control de nuestros gastos, indicando cada gasto realizado, se pueden editar, eliminar hasta filtrar gastos por categoria. Manejamos el localStorage para tener un mejor control de nuestros gastos. 
 
-## Available Scripts
+# Construido con 🛠️
+* React.js
+* Normalize Css
+* localStorage
+* React circular progressbar
+* React swipeable list
+* Sweetalert2
 
-In the project directory, you can run:
+# Funcionalidades ⚙️
 
-### `npm start`
+## Validacion de el formulario
+Este funcion no permite enviar datos vacio, por obligacion se debe enviar al menos un valor numerico mayor a 0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Control de dinero gastado y disponible
+Realiza con calculo en base de nuestro a nuestro dinero inicial, por cada gasto, modificacion o eliminar un gasto estos numeros se actualizan dinamicamente, ademas se actualiza el porcentaje consumido y el estado de nuestro circular progressbar.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cambio de color en el progressbar
+Este cambio de color se realiza en base a un calculo que si el porcentaje gastado realiza una comprobacion del valor actual y si guarda un color especial. 
 
-### `npm test`
+## Reiniciar la aplicacion
+Al consumir todo el saldo disponible nos mostrara una alerta diciendo que se ha consumido todo el dinero y aparacera un boton que nos va a permitir eliminar (sin antes confirmar) todos los gatos y volver a la app inicial
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Swipear 
+Gracias a una bibioteca de react [React Swipeable List](https://www.npmjs.com/package/react-swipeable-list) nos permite realizar deslizar (izquierda o derecha) gastos dependiendo de lo que se desea realizar, editar o eliminar, al editar abrira un modal para que podeamos editar el gasto y para eliminar el gasto desaparece de nuestra lista. 
 
-### `npm run build`
+## Circle Progress Bar
+Otra biblioteca especial de react [React Circular Progressbar](https://www.npmjs.com/package/react-circular-progressbar) que nos permite tener un grafica que controla nuestros gastos de forma dinamica. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## No agregar mas gastos
+Al tener la aplicacion sin dinero disponible el boton de agregar gasto desaparece para que tengamos un limite de todos nuestros gasto.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Busqueda por categoria
+Cuando tengamos muchos gastos y querramos buscar uno o varios de una misma categoria podemos filtrar esta busqueda para mejores resultados y una mayor facilidad de uso.
 
-### `npm run eject`
+## Resposive
+Esta aplicacion esta diseñada para que se pueda usar desde cualquier dispositivo. 
+# Deploy 👨‍💻
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Contacto 📫
+- [Linkedin](https://www.linkedin.com/in/leanquiroga95/)
+- [Email](mailto:leandroquiroga9514@gmail.com)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Autor 👤
+Realizado con ❤️ por [Leandro Quiroga](https://github.com/leandroquiroga);
