@@ -11,26 +11,33 @@ export const Header = (props) => {
     resetForm,
     isValidExpenses,
     setIsValidExpenses,
-    arrExpenses
+    arrExpenses,
+    percentage,
+    setPercentage,
+    setArrExpenses,
   } = props
 
   return (
         <header>
           <h1>{title}</h1>
-          {
-            (isValidExpenses) ? 
-                  <ControlExpenses 
-                    valueExpenses={valueExpenses}
-                    arrExpenses={arrExpenses}
-                 />
-            :
-                  <NewExpenses 
-                      nameLabel="Definir presupuesto"
-                      valueExpenses={valueExpenses}
-                      setForm={setForm}
-                      resetForm={resetForm}
-                      isValidExpenses={isValidExpenses}
-                      setIsValidExpenses={setIsValidExpenses}
+      {
+        (isValidExpenses) ?
+          <ControlExpenses
+            valueExpenses={valueExpenses}
+            arrExpenses={arrExpenses}
+            percentage={percentage}
+            setPercentage={setPercentage}
+            setArrExpenses={setArrExpenses}
+            setIsValidExpenses={setIsValidExpenses}
+          />
+        :
+          <NewExpenses 
+            nameLabel="Definir presupuesto"
+            valueExpenses={valueExpenses}
+            setForm={setForm}
+            resetForm={resetForm}
+            isValidExpenses={isValidExpenses}
+            setIsValidExpenses={setIsValidExpenses}
           />
           }
         </header>
