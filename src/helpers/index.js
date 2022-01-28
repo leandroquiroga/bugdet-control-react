@@ -39,4 +39,21 @@ export const direccionarIcons = {
 // formatCurrency recibe el valor de nuestro state
 // formateado a tipo number para retornarlo 
 // en un formato adecuado a la moneda local
-export const formatCurrency = (mount) => mount.toLocaleString('es-AR', { style: 'currency', currency: 'ARG',});
+export const formatCurrency = (mount) => mount.toLocaleString('es-AR', { style: 'currency', currency: 'ARG', });
+
+
+//Si el porcentaje es menor a 50% cambia el color a yellow,
+//si es menor a 15 % cambia el color a rojo
+export const changeColorProgressBar = (value) => {
+
+    let color; 
+    if (value < 50) {
+        color = '#0353a4'
+    } else if (value >= 50 && value < 84) {
+       color = '#f9c74f'
+    } else if (value >= 85) {
+        color = '#d00000';
+    }
+
+    return color;
+}
