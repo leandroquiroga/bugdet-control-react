@@ -32,7 +32,7 @@ export const Modal = (props) => {
             setId(id);
             setDate(date)
         }
-    },[])
+    },[expenesEdit])
     // Descativa el modal, volviendo los valores del state por defecto.
     const handleCloseModal = () => {
         setAnimateModal(false);
